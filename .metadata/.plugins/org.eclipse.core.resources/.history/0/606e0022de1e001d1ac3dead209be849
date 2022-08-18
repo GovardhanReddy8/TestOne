@@ -1,0 +1,27 @@
+package seleniumspract;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DatePicker {
+	WebDriver driver;
+	@Test
+	public void datepick() {
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		driver.get("https://www.redbus.in/");
+		driver.manage().timeouts().getImplicitWaitTimeout();
+		String emonth="2023";
+		String eyear="Feb";
+		String eday="12";
+		driver.findElement(By.xpath("//*[@id=\"onward_cal\"]")).click();
+		driver.findElement(By.xpath(""))
+		
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package Listenme;
+
+import org.testng.ITestListener;
+
+import utils.CaptureShot;
+
+public class Listen extends CaptureShot implements ITestListener{
+
+}

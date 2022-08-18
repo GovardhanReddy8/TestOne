@@ -1,0 +1,16 @@
+package regression;
+
+import org.testng.annotations.Test;
+
+import commens.BasePage;
+
+public class TestOut extends BasePage{
+	@Test
+	public void doto(String username, String password) {
+		
+		
+		
+		
+	}
+
+}

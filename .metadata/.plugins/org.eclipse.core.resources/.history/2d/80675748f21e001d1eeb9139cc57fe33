@@ -1,0 +1,7 @@
+package utils;
+
+import commens.BasePage;
+
+public class UtilKit extends BasePage{
+
+}

@@ -1,0 +1,15 @@
+package utils;
+
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterTest;
+
+import com.github.dockerjava.api.model.Driver;
+
+public class CaptureShot {
+	@AfterTest
+	public void TakeShot() {
+		TakesScreenshot ts=(TakesScreenshot)
+		
+	}
+
+}

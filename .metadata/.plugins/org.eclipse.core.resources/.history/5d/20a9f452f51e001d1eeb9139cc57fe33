@@ -1,0 +1,18 @@
+package utils;
+
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterTest;
+
+import com.github.dockerjava.api.model.Driver;
+
+import commens.BasePage;
+
+public class CaptureShot extends BasePage{
+	@AfterTest
+	public void TakeShot() {
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package utils;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import commens.BasePage;
+
+public class UtilKit extends BasePage{
+	
+	public void start() {
+		
+	}
+	
+	public static Object[][] getData(String sheetname, String testname) throws IOException {
+		FileInputStream fis = new FileInputStream("TestData\\Book.xlsx");
+		
+		
+		return null;
+		
+	}
+
+}

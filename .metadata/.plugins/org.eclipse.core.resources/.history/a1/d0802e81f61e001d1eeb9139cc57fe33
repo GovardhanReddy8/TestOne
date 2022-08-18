@@ -1,0 +1,29 @@
+package regression;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import Listenme.Listen;
+import commens.BasePage;
+import pages.LoginPage;
+import utils.UtilKit;
+@Listeners(Listen.class)
+public class TestOut extends BasePage{
+	@Test(dataProvider = "getMe")
+	public void doto(String username, String password) {
+		LoginPage lp = new LoginPage(driver);
+		lp.doLogin(username, password);
+		
+		
+	}
+	
+	@DataProvider
+	Object[][] getMe() throws IOException{
+		return UtilKit.getData("Sheet", "Login");
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package regression;
+
+import commens.BasePage;
+
+public class TestOut extends BasePage{
+	
+	public void doto(String username, String password) {
+		
+	}
+
+}

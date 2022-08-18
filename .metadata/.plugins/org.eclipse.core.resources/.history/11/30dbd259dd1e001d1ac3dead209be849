@@ -1,0 +1,11 @@
+package seleniumspract;
+
+import org.testng.annotations.Test;
+
+public class DatePicker {
+	@Test
+	public void datepick() {
+		
+	}
+
+}

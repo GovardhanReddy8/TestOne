@@ -1,0 +1,36 @@
+package utils;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+import commens.BasePage;
+
+public class UtilKit extends BasePage{
+	
+	public void start() {
+		
+	}
+	
+	public static <E> Object[][] getData(String sheetname, String testname) throws IOException {
+		FileInputStream fis = new FileInputStream("TestData\\Book.xlsx");
+		Workbook wb = WorkbookFactory.create(fis);
+		Sheet sheet = wb.getSheet(sheetname);
+		ArrayList<Row> td = new ArrayList<Row>();
+		td=findRows(sheet,testname);
+		
+		return null;
+		
+	}
+
+	private static ArrayList<Row> findRows(Sheet sheet, String testname) {
+		return null;
+	}
+
+}
