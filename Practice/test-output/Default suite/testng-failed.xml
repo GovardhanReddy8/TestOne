@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="regression.TestOut">
+      <class name="seleniumspract.DropDown">
         <methods>
-          <include name="doto" invocation-numbers="0 1 2"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="drop"/>
         </methods>
-      </class> <!-- regression.TestOut -->
+      </class> <!-- seleniumspract.DropDown -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
