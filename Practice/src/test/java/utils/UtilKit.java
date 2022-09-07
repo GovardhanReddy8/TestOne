@@ -10,51 +10,45 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import commens.BasePage;
+import comments.BagePage;
 
-public class UtilKit extends BasePage{
+public class UtilKit extends BagePage{
 	
-	public void start() {
-		
-	}
-	
-	public static <E> Object[][] getData(String sheetname, String testname) throws IOException {
+	public static Object[][] data(String sheetname, String dataname) throws IOException {
 		FileInputStream fis = new FileInputStream("TestData\\Book.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
 		Sheet sheet = wb.getSheet(sheetname);
-		ArrayList<Row> td = new ArrayList<Row>();
-		td=findRows(sheet,testname);
-		System.out.println(td.size());
-		System.out.println(td.get(0).getLastCellNum());
-		Object[][] obj=new Object[td.size()-1][td.get(0).getLastCellNum()-1];
-		for (int i = 0; i < td.size()-1; i++) {
-			for (int j = 0; j < td.get(0).getLastCellNum()-1; j++) {
-				obj[i][j]=td.get(i+1).getCell(j+1).toString();
+		ArrayList<Row> rows = new ArrayList<Row>();
+		rows=getRow(sheet,dataname);
+		System.out.println(rows.size());
+		System.out.println(rows.get(0).getLastCellNum());
+		Object[][] obj=new Object[rows.size()-1][rows.get(0).getLastCellNum()-1];
+		for (int i = 0; i < rows.size()-1; i++) {
+			for (int j = 0; j < rows.get(0).getLastCellNum()-1; j++) {
+				obj[i][j]=rows.get(i+1).getCell(j+1).toString();
 				
 			}
 			
 		}
-		
 		return obj;
 		
 	}
 
-	private static ArrayList<Row> findRows(Sheet sheet, String testname) {
-		ArrayList<Row> rows = new ArrayList<Row>();
+	private static ArrayList<Row> getRow(Sheet sheet, String dataname) {
+		ArrayList<Row> row = new ArrayList<Row>();
 		ArrayList<Row> cells = new ArrayList<Row>();
-		System.out.println(sheet.getLastRowNum());
 		System.out.println(sheet.getPhysicalNumberOfRows());
+		System.out.println(sheet.getLastRowNum());
 		for (int i = 0; i <=sheet.getLastRowNum(); i++) {
 			if (!(sheet.getRow(i)==null)) {
-				rows.add(sheet.getRow(i));
-				
+				row.add(sheet.getRow(i));
 			}
 			
 		}
-		System.out.println(rows.size());
-		for (int i = 0; i < rows.size(); i++) {
-			if (rows.get(i).getCell(0).getStringCellValue().equals(testname)) {
-				cells.add(rows.get(i));
+		System.out.println(row.size());
+		for (int i = 0; i < row.size(); i++) {
+			if (row.get(i).getCell(0).getStringCellValue().equals(dataname)) {
+				cells.add(row.get(i));
 				
 			}
 			
